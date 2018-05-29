@@ -2,7 +2,7 @@ from django.db import models
 
 class Prompt(models.Model):
     author = models.CharField(max_length=25)
-    body = models.CharField(max_length=500)
+    body = models.TextField()
     post_date = models.DateField(auto_now_add=True)
 
     def __str__(self):
