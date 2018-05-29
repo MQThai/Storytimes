@@ -5,4 +5,5 @@ In Storytimes, you can write stories here based off prompts or sit back and enjo
 
 ## Technologies Used
 * Django
+* PostgreSQL
 * Python
