@@ -44,10 +44,6 @@ def prompt_detail(request, id):
     prompt = Prompt.objects.get(id=id)
     return render(request, 'storytimes/prompt_detail.html', {'prompt': prompt})
 
-def post_detail(request, id):
-    post = Post.objects.get(id=id)
-    return render(request, 'storytimes/post_detail.html', {'post': post})
-
 def prompt_create(request):
     if request.method == 'POST':
         form = PromptForm(request.POST)
@@ -57,6 +53,21 @@ def prompt_create(request):
     else:
         form = PromptForm()
     return render(request, 'storytimes/prompt_create.html', {'form': form})
+
+def prompt_edit(request, id):
+    prompt = Prompt.objects.get(id=id)
+    if request.method == 'POST':
+        form = PromptForm(request.POST, instance=prompt)
+        if form.is_valid():
+            prompt = form.save()
+            return redirect('prompt_detail', id=prompt.id)
+    else:
+        form = PromptForm(instance=prompt)
+    return render(request, 'storytimes/prompt_create.html', {'form': form})
+
+def post_detail(request, id):
+    post = Post.objects.get(id=id)
+    return render(request, 'storytimes/post_detail.html', {'post': post})
 
 def post_create(request):
     if request.method == 'POST':

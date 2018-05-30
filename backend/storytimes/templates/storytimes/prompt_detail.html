@@ -5,7 +5,10 @@
 
 <p>{{ prompt.body }}</p>
 
-<a href="{% url 'post_create' %}">Add a post</a>
+<div>
+  <a href="{% url 'prompt_edit' id=prompt.id %}">Edit Prompt</a>
+  <a href="{% url 'post_create' %}">Add A Post</a>
+</div>
 
 <ul>
   {% for post in prompt.posts.all %}

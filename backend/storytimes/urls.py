@@ -7,6 +7,7 @@ urlpatterns = [
     path('', views.prompt_list, name='prompt_list'),
     path('prompts/<int:id>', views.prompt_detail, name='prompt_detail'),
     path('prompts/new', views.prompt_create, name='prompt_create'),
+    path('prompts/<int:id>/edit', views.prompt_edit, name='prompt_edit'),
     path('posts/<int:id>', views.post_detail, name='post_detail'),
     path('posts/new', views.post_create, name='post_create'),
     path('chapters', views.ChapterList.as_view(), name='chapter_list'),
