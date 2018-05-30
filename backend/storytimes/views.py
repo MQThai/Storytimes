@@ -57,3 +57,13 @@ def prompt_create(request):
     else:
         form = PromptForm()
     return render(request, 'storytimes/prompt_create.html', {'form': form})
+
+def post_create(request):
+    if request.method == 'POST':
+        form = PostForm(request.POST)
+        if form.is_valid():
+            post = form.save()
+            return redirect('post.detail', id=post.id)
+    else:
+        form = PostForm()
+    return render(request, 'storytimes/post_create.html', {'form': form})
