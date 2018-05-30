@@ -129,3 +129,6 @@ REST_FRAMEWORK = {
         'rest_framework.permissions.DjangoModelPermissionsOrAnonReadOnly'
     ]
 }
+
+LOGIN_REDIRECT_URL = 'prompt_list'
+LOGOUT_REDIRECT_URL = 'prompt_list'

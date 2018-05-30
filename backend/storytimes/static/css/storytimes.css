@@ -5,11 +5,11 @@ body {
   padding: 2em 1em;
 }
 
-h1 {
+/* h1 {
   border-bottom: 1px solid black;
-}
+} */
 
-nav a {
+a {
   border: 2px solid black;
   margin: .5em;
   padding: .5em;
@@ -17,17 +17,13 @@ nav a {
   color: blue;
 }
 
-nav a:hover {
+a:hover {
   background-color: white;
   color: blue;
 }
 
-a, a:visited {
+a:visited {
   text-decoration: none;
-}
-
-a:hover {
-  background-color: silver;
 }
 
 ul {

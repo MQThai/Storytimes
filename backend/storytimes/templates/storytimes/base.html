@@ -9,10 +9,18 @@
   <title>Storytimes</title>
 </head>
 <body>
-  <h1>Storytimes</h1>
-  <nav>
+  <div>
+    <h1>Storytimes</h1>
     <a href="/">Home</a>
-  </nav>
+  </div>
+  <div>
+    {% if user.is_authenticated %}
+      {{ user.username }}
+      <a href="{% url 'logout' %}">Log out</a>
+    {% else %}
+       <a href="{% url 'login' %}">Log in</a>
+    {% endif %}
+  </div>
   {% block content %}
   {% endblock %}
 </body>
