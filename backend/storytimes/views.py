@@ -78,3 +78,14 @@ def post_create(request):
     else:
         form = PostForm()
     return render(request, 'storytimes/post_create.html', {'form': form})
+
+def post_edit(request, id):
+    post = Post.objects.get(id=id)
+    if request.method == 'POST':
+        form = PostForm(request.POST, instance=post)
+        if form.is_valid():
+            post = form.save()
+            return redirect('post_detail', id=post.id)
+    else:
+        form = PostForm(instance=post)
+    return render(request, 'storytimes/post_create.html', {'form': form})

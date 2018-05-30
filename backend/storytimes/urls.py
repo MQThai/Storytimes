@@ -10,6 +10,7 @@ urlpatterns = [
     path('prompts/<int:id>/edit', views.prompt_edit, name='prompt_edit'),
     path('posts/<int:id>', views.post_detail, name='post_detail'),
     path('posts/new', views.post_create, name='post_create'),
+    path('posts/<int:id>/edit', views.post_edit, name='post_edit'),
     path('chapters', views.ChapterList.as_view(), name='chapter_list'),
     path('chapters/<int:id>', views.ChapterDetail.as_view(), name='chapter_detail'),
     path('comments', views.CommentList.as_view(), name='comment_list'),
