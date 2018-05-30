@@ -65,6 +65,10 @@ def prompt_edit(request, id):
         form = PromptForm(instance=prompt)
     return render(request, 'storytimes/prompt_create.html', {'form': form})
 
+def prompt_delete(request, id):
+    prompt = Prompt.objects.get(id=id).delete()
+    return redirect('prompt_list')
+
 def post_detail(request, id):
     post = Post.objects.get(id=id)
     return render(request, 'storytimes/post_detail.html', {'post': post})
