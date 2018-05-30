@@ -1,0 +1,39 @@
+body {
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  max-width: 50em;
+  margin: auto;
+  padding: 2em 1em;
+}
+
+h1 {
+  border-bottom: 1px solid black;
+}
+
+nav a {
+  border: 2px solid black;
+  margin: .5em;
+  padding: .5em;
+  background-color: silver;
+  color: blue;
+}
+
+nav a:hover {
+  background-color: white;
+  color: blue;
+}
+
+a, a:visited {
+  text-decoration: none;
+}
+
+a:hover {
+  background-color: silver;
+}
+
+ul {
+  list-style-type: circle;
+}
+
+li {
+  margin: .25em;
+}
