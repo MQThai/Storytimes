@@ -2,6 +2,7 @@ from django.shortcuts import render, redirect
 from rest_framework import generics
 from .serializers import PromptSerializer, PostSerializer, ChapterSerializer, CommentSerializer
 from .models import Prompt, Post, Chapter, Comment
+from .forms import PromptForm, PostForm
 
 class PromptList(generics.ListCreateAPIView):
     queryset = Prompt.objects.all()
@@ -46,3 +47,13 @@ def prompt_detail(request, id):
 def post_detail(request, id):
     post = Post.objects.get(id=id)
     return render(request, 'storytimes/post_detail.html', {'post': post})
+
+def prompt_create(request):
+    if request.method == 'POST':
+        form = PromptForm(request.POST)
+        if form.is_valid():
+            prompt = form.save()
+            return redirect('prompt_detail', id=prompt.id)
+    else:
+        form = PromptForm()
+    return render(request, 'storytimes/prompt_create.html', {'form': form})

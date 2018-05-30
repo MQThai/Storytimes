@@ -6,6 +6,7 @@ from . import views
 urlpatterns = [
     path('', views.prompt_list, name='prompt_list'),
     path('prompts/<int:id>', views.prompt_detail, name='prompt_detail'),
+    path('prompts/new', views.prompt_create, name='prompt_create'),
     path('posts/<int:id>', views.post_detail, name='post_detail'),
     path('chapters', views.ChapterList.as_view(), name='chapter_list'),
     path('chapters/<int:id>', views.ChapterDetail.as_view(), name='chapter_detail'),
