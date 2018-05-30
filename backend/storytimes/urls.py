@@ -4,12 +4,11 @@ from rest_framework.routers import DefaultRouter
 from . import views
 
 urlpatterns = [
-    path('prompts', views.PromptList.as_view(), name='prompt-list'),
-    path('prompts/<int:pk>', views.PromptDetail.as_view(), name='prompt-detail'),
-    path('posts', views.PostList.as_view(), name='post-list'),
-    path('posts/<int:pk>', views.PostDetail.as_view(), name='post-detail'),
-    path('chapters', views.ChapterList.as_view(), name='chapter-list'),
-    path('chapters/<int:pk>', views.ChapterDetail.as_view(), name='chapter-detail'),
-    path('comments', views.CommentList.as_view(), name='comment-list'),
-    path('comments/<int:pk>', views.CommentDetail.as_view(), name='comment-detail')
+    path('', views.prompt_list, name='prompt_list'),
+    path('prompts/<int:id>', views.prompt_detail, name='prompt_detail'),
+    path('posts/<int:id>', views.post_detail, name='post_detail'),
+    path('chapters', views.ChapterList.as_view(), name='chapter_list'),
+    path('chapters/<int:id>', views.ChapterDetail.as_view(), name='chapter_detail'),
+    path('comments', views.CommentList.as_view(), name='comment_list'),
+    path('comments/<int:id>', views.CommentDetail.as_view(), name='comment_detail')
 ]

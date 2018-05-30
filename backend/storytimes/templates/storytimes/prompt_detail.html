@@ -1,0 +1,13 @@
+<h2>by {{ prompt.author }} on {{ prompt.post_date }}</h2>
+
+<p>{{ prompt.body }}</p>
+
+<a href="">Add a post</a>
+
+<ul>
+  {% for post in prompt.posts.all %}
+  <li>
+    <a href="{% url 'post_detail' id=post.id %}">{{ post.title }} by {{ post.author }}</a>
+  </li>
+  {% endfor %}
+</ul>
