@@ -5,7 +5,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <link rel="stylesheet" href="{% static 'css/storytimes.css' %}">
+  <!-- <link rel="stylesheet" href="{% static 'css/storytimes.css' %}"> -->
   <title>Storytimes</title>
 </head>
 <body>
@@ -18,7 +18,7 @@
       {{ user.username }}
       <a href="{% url 'logout' %}">Log out</a>
     {% else %}
-       <a href="{% url 'login' %}">Log in</a>
+      <a href="{% url 'login' %}">Log in</a>
     {% endif %}
   </div>
   {% block content %}

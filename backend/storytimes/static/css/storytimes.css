@@ -4,32 +4,3 @@ body {
   margin: auto;
   padding: 2em 1em;
 }
-
-/* h1 {
-  border-bottom: 1px solid black;
-} */
-
-a {
-  border: 2px solid black;
-  margin: .5em;
-  padding: .5em;
-  background-color: silver;
-  color: blue;
-}
-
-a:hover {
-  background-color: white;
-  color: blue;
-}
-
-a:visited {
-  text-decoration: none;
-}
-
-ul {
-  list-style-type: circle;
-}
-
-li {
-  margin: .25em;
-}

@@ -8,7 +8,7 @@
 <div>
   <a href="{% url 'prompt_edit' id=prompt.id %}">Edit Prompt</a>
   <a href="{% url 'prompt_delete' id=prompt.id %}">Delete Prompt</a>
-  <a href="{% url 'post_create' %}">Add A Post</a>
+  <a href="{% url 'post_create' id=prompt.id %}">Add A Post</a>
 </div>
 
 <ul>

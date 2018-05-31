@@ -1,12 +1,12 @@
 from django import forms
-from .models import Prompt, Post, Chapter, Comment
+from .models import Prompt, Post
 
 class PromptForm(forms.ModelForm):
     class Meta:
         model = Prompt
-        fields = ('body',)
+        fields = ('author', 'body',)
 
 class PostForm(forms.ModelForm):
     class Meta:
         model = Post
-        fields = ('title', 'body',)
+        fields = ('title', 'body', 'prompt',)

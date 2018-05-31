@@ -1,6 +1,5 @@
 from django.shortcuts import render, redirect
 from django.contrib.auth.decorators import login_required
-from rest_framework import generics
 from .models import Prompt, Post, Chapter, Comment
 from .forms import PromptForm, PostForm
 
@@ -45,14 +44,16 @@ def post_detail(request, id):
     return render(request, 'storytimes/post_detail.html', {'post': post})
 
 @login_required
-def post_create(request):
+def post_create(request, id):
+    prompt = Prompt.objects.get(id=id)
     if request.method == 'POST':
         form = PostForm(request.POST)
         if form.is_valid():
             post = form.save()
-            return redirect('post.detail', id=post.id)
+            return redirect('post_detail', id=post.id)
     else:
         form = PostForm()
+        form.fields['prompt'].initial = prompt
     return render(request, 'storytimes/post_create.html', {'form': form})
 
 @login_required
