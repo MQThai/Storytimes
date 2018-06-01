@@ -8,4 +8,14 @@
 <h4>by {{ post.author }} on {{ post.post_date }}</h4>
 
 <p>{{ post.body }}</p>
+
+<h4>comments</h4>
+<ul>
+    {% for comment in post.comments.all %}
+    <li>
+      {{ comment.body }}
+      <p>{{ comment.user }}</p>
+    </li>
+    {% endfor %}
+  </ul>
 {% endblock %}
