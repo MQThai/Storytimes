@@ -7,3 +7,8 @@ In Storytimes, you can write stories to improve your writing skills based off pr
 * Django
 * PostgreSQL
 * Python
+
+## Things To Work On
+* when deleting a prompt response, page should redirect back to that prompt
+*
+*
