@@ -10,11 +10,12 @@
 <p>{{ post.body }}</p>
 
 <h4>comments</h4>
+<a href="{% url 'comment_create' id=post.id %}">(Add A Comment)</a>
 <ul>
     {% for comment in post.comments.all %}
     <li>
-      {{ comment.body }}
-      <p>{{ comment.user }}</p>
+      <p>{{ comment.body }}</p>
+      <p>{{ comment.user }} on {{ comment.post_date }}</p>
     </li>
     {% endfor %}
   </ul>

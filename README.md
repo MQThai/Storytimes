@@ -9,6 +9,7 @@ In Storytimes, you can write stories to improve your writing skills based off pr
 * Python
 
 ## Things To Work On
+* allow formatting of prompt responses
 * when deleting a prompt response, page should redirect back to that prompt
 * allow users to reply to comments
 *

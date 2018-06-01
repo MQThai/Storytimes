@@ -1,7 +1,7 @@
 from django.shortcuts import render, redirect
 from django.contrib.auth.decorators import login_required
 from .models import Prompt, Post, Chapter, Comment
-from .forms import PromptForm, PostForm
+from .forms import PromptForm, PostForm, CommentForm
 
 def prompt_list(request):
     prompts = Prompt.objects.all()
@@ -72,6 +72,19 @@ def post_edit(request, id):
 def post_delete(request, id):
     prompt = Post.objects.get(id=id).delete()
     return redirect('prompt_list')
+
+@login_required
+def comment_create(request, id):
+    post = Post.objects.get(id=id)
+    if request.method == 'POST':
+        form = CommentForm(request.POST)
+        if form.is_valid():
+            comment = form.save()
+            return redirect('post_detail', id=post.id)
+    else:
+        form = CommentForm()
+        form.fields['post'].initial = post
+    return render(request, 'storytimes/comment_create.html', {'form': form})
 
 def about(request):
     return render(request, 'storytimes/about.html')
