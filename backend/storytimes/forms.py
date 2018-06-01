@@ -9,4 +9,4 @@ class PromptForm(forms.ModelForm):
 class PostForm(forms.ModelForm):
     class Meta:
         model = Post
-        fields = ('prompt', 'title', 'body',)
+        fields = ('prompt', 'author', 'title', 'body',)

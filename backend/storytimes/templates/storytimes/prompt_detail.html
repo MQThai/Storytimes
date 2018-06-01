@@ -15,7 +15,8 @@
   <ul>
     {% for post in prompt.posts.all %}
     <li>
-      <a href="{% url 'post_detail' id=post.id %}">{{ post.title }} by {{ post.author }}</a>
+      <a href="{% url 'post_detail' id=post.id %}">{{ post.title }}</a>
+      <p>by {{ post.author }}</p>
     </li>
     {% endfor %}
   </ul>
