@@ -1,10 +1,10 @@
 {% extends 'storytimes/base.html' %}
 
 {% block content %}
-<a href="{% url 'post_edit' id=post.id %}">Edit Post</a>
-<a href="{% url 'post_delete' id=post.id %}">Delete Post</a>
+<a href="{% url 'post_edit' id=post.id %}">(Edit Post)</a>
+<a href="{% url 'post_delete' id=post.id %}">(Delete Post)</a>
 
-<h2>{{ post.title }}</h2>
+<h3>{{ post.title }}</h3>
 <h4>by {{ post.author }} on {{ post.post_date }}</h4>
 
 <p>{{ post.body }}</p>

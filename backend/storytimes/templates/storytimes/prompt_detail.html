@@ -1,21 +1,23 @@
 {% extends 'storytimes/base.html' %}
 
 {% block content %}
-<h2>by {{ prompt.author }} on {{ prompt.post_date }}</h2>
+  <a href="{% url 'prompt_edit' id=prompt.id %}">(Edit Prompt)</a>
+  <a href="{% url 'prompt_delete' id=prompt.id %}">(Delete Prompt)</a>
+  <a href="{% url 'post_create' id=prompt.id %}">(Add A Post)</a>
 
-<p>{{ prompt.body }}</p>
-
-<div>
-  <a href="{% url 'prompt_edit' id=prompt.id %}">Edit Prompt</a>
-  <a href="{% url 'prompt_delete' id=prompt.id %}">Delete Prompt</a>
-  <a href="{% url 'post_create' id=prompt.id %}">Add A Post</a>
+<div class="prompt-detail">
+  <h3>{{ prompt.body }}</h3>
+  <h4>by {{ prompt.author }} on {{ prompt.post_date }}</h4>
 </div>
 
-<ul>
-  {% for post in prompt.posts.all %}
-  <li>
-    <a href="{% url 'post_detail' id=post.id %}">{{ post.title }} by {{ post.author }}</a>
-  </li>
-  {% endfor %}
-</ul>
+<div>
+  <p>Posts of the Prompt</p>
+  <ul>
+    {% for post in prompt.posts.all %}
+    <li>
+      <a href="{% url 'post_detail' id=post.id %}">{{ post.title }} by {{ post.author }}</a>
+    </li>
+    {% endfor %}
+  </ul>
+</div>
 {% endblock %}

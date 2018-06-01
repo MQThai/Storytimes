@@ -1,7 +1,9 @@
 {% extends 'storytimes/base.html' %}
 
 {% block content %}
-<h2>Prompts <a href="{% url 'prompt_create' %}">(+)</a></h2>
+<a href="{% url 'about' %}">(About)</a>
+<a href="{% url 'prompt_create' %}">(Add a prompt)</a>
+<h2>Prompts</h2>
 
 <ul>
   {% for prompt in prompts %}

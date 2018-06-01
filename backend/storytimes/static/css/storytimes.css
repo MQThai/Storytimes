@@ -1,10 +1,29 @@
 body {
+  background-color: rgb(255, 255, 255);
   font-family: 'Trirong', serif;
-  max-width: 50em;
+  max-width: 75em;
   margin: auto;
   padding: 2em 1em;
 }
 
 h1 {
   border-bottom: 1px solid black;
+  text-align: center;
+}
+
+nav {
+  float: right;
+}
+
+li {
+  list-style-type: none;
+}
+
+li p {
+  margin: 1em;
+}
+
+a {
+  color: #0000CD;
+  text-decoration: none;
 }

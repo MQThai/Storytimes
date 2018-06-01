@@ -5,6 +5,7 @@ from . import views
 
 urlpatterns = [
     path('', views.prompt_list, name='prompt_list'),
+    path('about', views.about, name='about'),
     path('prompts/<int:id>', views.prompt_detail, name='prompt_detail'),
     path('prompts/new', views.prompt_create, name='prompt_create'),
     path('prompts/<int:id>/edit', views.prompt_edit, name='prompt_edit'),

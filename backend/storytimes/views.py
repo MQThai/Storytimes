@@ -71,4 +71,7 @@ def post_edit(request, id):
 @login_required
 def post_delete(request, id):
     prompt = Post.objects.get(id=id).delete()
-    return redirect('prompt_detail')
+    return redirect('prompt_list')
+
+def about(request):
+    return render(request, 'storytimes/about.html')
