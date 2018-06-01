@@ -10,5 +10,5 @@ In Storytimes, you can write stories to improve your writing skills based off pr
 
 ## Things To Work On
 * when deleting a prompt response, page should redirect back to that prompt
-*
+* allow users to reply to comments
 *

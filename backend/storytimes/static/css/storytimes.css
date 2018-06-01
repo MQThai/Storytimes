@@ -19,10 +19,6 @@ nav {
   float: right;
 }
 
-li {
-  list-style-type: none;
-}
-
 li p {
   margin: 1em;
 }
